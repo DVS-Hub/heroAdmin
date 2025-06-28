@@ -12,11 +12,10 @@ import { useState } from "react";
 import { useHttp } from "../../hooks/http.hook";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
-import { heroCreated } from "../../actions";
-import { createSelector } from "reselect";
+import { heroCreated } from "../heroesList/heroesSlice";
+import { createSelector } from "@reduxjs/toolkit";
 
 const HeroesAddForm = () => {
-  console.log("addform");
   const [nameHero, setNameHero] = useState("");
   const [descrHero, setDescrHero] = useState("");
   const [elementHero, setElementHero] = useState("");

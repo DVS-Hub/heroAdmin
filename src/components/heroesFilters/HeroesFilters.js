@@ -1,14 +1,13 @@
 import { useEffect } from "react";
-import { useHttp } from "../../hooks/http.hook";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  fetchFilters,
   filtersFetchingError,
   activeFilterChanged,
-} from "../../actions";
+  fetchFilters,
+} from "../heroesFilters/filtersSlice";
 import Spinner from "../spinner/Spinner";
 import classNames from "classnames";
-import { createSelector } from "reselect";
+import { createSelector } from "@reduxjs/toolkit";
 
 // Задача для этого компонента:
 // Фильтры должны формироваться на основании загруженных данных
@@ -18,8 +17,6 @@ import { createSelector } from "reselect";
 // Представьте, что вы попросили бэкенд-разработчика об этом
 
 const HeroesFilters = () => {
-  const { request } = useHttp();
-
   const filtersSelector = createSelector(
     (state) => state.filters.filters,
     (state) => state.filters.filtersLoadingStatus,
@@ -34,7 +31,7 @@ const HeroesFilters = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchFilters(request));
+    dispatch(fetchFilters());
     // eslint-disable-next-line
   }, []);
 
@@ -45,7 +42,6 @@ const HeroesFilters = () => {
   }
 
   const renderFilters = (arr) => {
-    console.log("render Filters");
     if (arr.length === 0) {
       return <h5 className="text-center mt-5">Фильтры не найдены</h5>;
     }

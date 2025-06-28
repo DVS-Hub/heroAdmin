@@ -13,10 +13,22 @@
       "element": "wind"
     },
     {
-      "id": 3,
-      "name": "герой",
-      "description": "Скрывающийся в тени",
+      "id": "21961904-e1ae-44c7-9c51-ba5001e912e1",
+      "name": "Thor",
+      "description": "asdasd",
       "element": "wind"
+    },
+    {
+      "id": "af1a3b64-05ca-44f6-ab8f-4246e54c1464",
+      "name": "Captain Flint",
+      "description": "hgjhk",
+      "element": "earth"
+    },
+    {
+      "id": "0a31bde6-d075-4b31-a4ee-78c0047ecb6b",
+      "name": "Captain Flint",
+      "description": "dfgdfg",
+      "element": "water"
     }
   ],
   "filters": [

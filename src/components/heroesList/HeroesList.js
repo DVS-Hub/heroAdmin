@@ -1,10 +1,10 @@
 import { useHttp } from "../../hooks/http.hook";
 import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createSelector } from "reselect";
+import { createSelector } from "@reduxjs/toolkit";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import { fetchHeroes, heroesDelete } from "../../actions";
+import { heroesDelete, fetchHeroes } from "./heroesSlice";
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from "../spinner/Spinner";
 
@@ -14,8 +14,6 @@ import Spinner from "../spinner/Spinner";
 // Удаление идет и с json файла при помощи метода DELETE
 
 const HeroesList = () => {
-  console.log("heroeslist");
-
   const filteredHeroesSelector = createSelector(
     (state) => state.filters.activeFilter,
     (state) => state.heroes.heroes,
@@ -36,7 +34,7 @@ const HeroesList = () => {
   const { request } = useHttp();
 
   useEffect(() => {
-    dispatch(fetchHeroes(request));
+    dispatch(fetchHeroes());
     // eslint-disable-next-line
   }, []);
 
@@ -59,7 +57,6 @@ const HeroesList = () => {
 
   const renderHeroesList = (arr) => {
     if (arr.length === 0) {
-      console.log(arr.length);
       return (
         <CSSTransition timeout={0} classNames={"item"}>
           <h5 className="text-center mt-5">Героев пока нет</h5>
