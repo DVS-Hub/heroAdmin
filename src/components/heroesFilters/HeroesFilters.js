@@ -4,28 +4,12 @@ import {
   filtersFetchingError,
   activeFilterChanged,
   fetchFilters,
+  filtersSelector,
 } from "../heroesFilters/filtersSlice";
 import Spinner from "../spinner/Spinner";
 import classNames from "classnames";
-import { createSelector } from "@reduxjs/toolkit";
-
-// Задача для этого компонента:
-// Фильтры должны формироваться на основании загруженных данных
-// Фильтры должны отображать только нужных героев при выборе
-// Активный фильтр имеет класс active
-// Изменять json-файл для удобства МОЖНО!
-// Представьте, что вы попросили бэкенд-разработчика об этом
 
 const HeroesFilters = () => {
-  const filtersSelector = createSelector(
-    (state) => state.filters.filters,
-    (state) => state.filters.filtersLoadingStatus,
-    (state) => state.filters.activeFilter,
-    (filters, filtersLoadingStatus, activeFilter) => {
-      return { filters, filtersLoadingStatus, activeFilter };
-    }
-  );
-
   const { filters, filtersLoadingStatus, activeFilter } =
     useSelector(filtersSelector);
   const dispatch = useDispatch();

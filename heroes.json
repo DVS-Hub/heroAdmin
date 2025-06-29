@@ -19,40 +19,39 @@
       "element": "wind"
     },
     {
-      "id": "af1a3b64-05ca-44f6-ab8f-4246e54c1464",
-      "name": "Captain Flint",
-      "description": "hgjhk",
+      "id": "09a6ca62-ec94-472f-a01c-4644e8a80aba",
+      "name": "Thor",
+      "description": "asdasd",
       "element": "earth"
-    },
-    {
-      "id": "0a31bde6-d075-4b31-a4ee-78c0047ecb6b",
-      "name": "Captain Flint",
-      "description": "dfgdfg",
-      "element": "water"
     }
   ],
   "filters": [
     {
+      "id": 1,
       "name": "all",
       "className": "btn-outline-dark",
       "label": "Все"
     },
     {
+            "id": 2,
       "name": "fire",
       "className": "btn-danger",
       "label": "Огонь"
     },
     {
+            "id": 3,
       "name": "water",
       "className": "btn-primary",
       "label": "Вода"
     },
     {
+            "id": 4,
       "name": "wind",
       "className": "btn-success",
       "label": "Ветер"
     },
     {
+            "id": 5,
       "name": "earth",
       "className": "btn-secondary",
       "label": "Земля"
